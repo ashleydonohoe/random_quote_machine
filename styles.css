@@ -29,26 +29,21 @@ footer {
 	padding-top: 10px;
 }
 
-button {
+.btn-default {
 	margin: 50px 20px 20px;
+	background-color: #D2527F;
+	color: white;
+	padding: 20px;
+}
+
+.tweet {
+	margin: 10px auto !important;
+	height: 15px;
+
 }
 
 @media(max-width: 400px) {
-	.meme-image {
-		width: 320px;
-		margin: 0 auto;
-		height: auto;
-	}
-
 	main {
 		width: 100%;
 	}
-}
-
-.meme-top {
-	margin-top: 20px;
-}
-
-.meme-bottom {
-	margin-top: 200px;
 }

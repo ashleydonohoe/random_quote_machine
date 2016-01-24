@@ -28,9 +28,14 @@
       <div class="row">
         <div class="col-md-12">
           <div class="quote-box text-center" data-bind="with: currentQuote">
-              <p data-bind="text: quote"></p>
-              <p data-bind="text: author"></p>
-              <button class="btn btn-default center-block" id="generate" data-bind="click: generateQuote">Generate New Quote</button>
+              <h2 data-bind="text: quote"></h2>
+              <h4 data-bind="text: author"></h4>
+              <a><img src="tweet.jpg" alt="tweet"></a>
+              <!--<a data-bind="attr: { 'data-text' : quote }" href="https://twitter.com/share" class="twitter-share-button"{count} data-text="" data-via="ashleyddesigns1" data-size="large"><img src="tweet" alt="tweet"></a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script> -->
+          <div class="col-md-12">
+              <button class="btn btn-default" id="generate" data-bind="click: generateQuote">Generate New Quote</button>
+            </div>
           </div>
         </div>
     </main>

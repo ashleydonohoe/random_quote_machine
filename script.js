@@ -32,6 +32,7 @@ function QuotesViewModel() {
       var i = Math.floor(Math.random() * self.quoteList().length);
       console.log(i);
       self.currentQuote(self.quoteList()[i]);
+      //$('.twitter-share-button').attr('data-text', self.quoteList()[i].quote);
   }
 };
 
