@@ -36,12 +36,6 @@ footer {
 	padding: 20px;
 }
 
-.tweet {
-	margin: 10px auto !important;
-	height: 15px;
-
-}
-
 @media(max-width: 400px) {
 	main {
 		width: 100%;
