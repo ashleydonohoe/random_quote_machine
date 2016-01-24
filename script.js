@@ -1,23 +1,35 @@
-$(document).ready(function() {
-	$('#generate').click(function() {
-		var memeURL = $('input[name=image-url]').val();
-		var topText = $('input[name=top-text]').val();
-		var bottomText = $('input[name=bottom-text]').val();
-		console.log(memeURL);
-		console.log(topText);
-		console.log(bottomText);
-		$('.meme-image').css('background-image', 'url(' + memeURL + ')');
-		$('.meme-image').append('<h1 class="text-center meme-top">' + topText + '</h1>');
-		$('.meme-image').append('<h1 class="text-center meme-bottom">' + bottomText + '</h1>');
-	});
-	$('#clear').click(function() {
-		$('.meme-image').remove();
-		return true;
+// Set of quotes
+var availableQuotes = [
+    { quote: "The best preparation for tomorrow is doing your best today.", author: "H. Jackson Brown, Jr."},
+    { quote: "Start by doing what's necessary; then do what's possible; and suddenly you are doing the impossible.", author: "Francis of Assisi"},
+    { quote: "The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart.". author: "Helen Keller"},
+    { quote: "Nothing is impossible, the word itself says 'I'm possible'!", author: "Audrey Hepburn"},
 
-	});
-	/* Taken from http://stackoverflow.com/questions/4078245/onsubmit-return-false-has-no-effect-on-internet-explorer-7-8-form-is-still-su */
-	$("form[name=myform]").bind('submit',function(){
-   		return false;
-	});
-});
+];
+
+// Class representing a single quote
+var Quote = function(data) {
+  this.quote = ko.observable(data.quote);
+  this.author = ko.observable(data.author);
+}
+
+// Viewmodel
+function QuotesViewModel() {
+  var self = this;
+
+  this.quoteList = ko.observableArray([]);
+  availableQuotes.forEach(function(quoteItem) {
+    self.quoteList.push(new Quote(quoteItem));
+  });
+
+  this.currentQuote = ko.observable(this.quoteList()[0]);
+
+    this.generateQuote = function() {
+      var i = Math.floor(Math.random() * self.quoteList().length);
+      console.log(i);
+      self.currentQuote(self.quoteList()[i]);
+  }
+};
+
+ko.applyBindings(QuotesViewModel());
 
