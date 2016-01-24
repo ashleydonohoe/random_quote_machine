@@ -32,7 +32,11 @@ function QuotesViewModel() {
       var i = Math.floor(Math.random() * self.quoteList().length);
       console.log(i);
       self.currentQuote(self.quoteList()[i]);
-      //$('.twitter-share-button').attr('data-text', self.quoteList()[i].quote);
+      tweetQuote = (self.currentQuote().quote());
+      //console.log(tweetQuote);
+      var fullLink = "https://twitter.com/intent/tweet?text=" + tweetQuote + "&via=ashleyddesigns1";
+      console.log(fullLink);
+      $('.twitter-share-button').attr('href', fullLink);
   }
 };
 
